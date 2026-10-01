@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상권 업종 내비게이터 (Business Sector Navigator)</title>
+    <meta name="description" content="소상공인시장진흥공단 상권 업종 분류 코드 검색 및 탐색 대시보드">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class='bx bx-compass'></i>
+                <h1>업종 내비게이터</h1>
+            </div>
+            <div class="sidebar-menu">
+                <a href="#" class="active"><i class='bx bx-search-alt'></i> 탐색 및 검색</a>
+                <a href="#"><i class='bx bx-bookmark'></i> 저장된 업종</a>
+                <a href="#"><i class='bx bx-pie-chart-alt-2'></i> 상권 분석 (예정)</a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header>
+                <h2>업종 검색 및 탐색</h2>
+                <p>국가 표준 상가(상권) 업종 분류를 쉽고 빠르게 찾아보세요.</p>
+            </header>
+
+            <div class="search-section">
+                <div class="search-bar">
+                    <i class='bx bx-search'></i>
+                    <input type="text" id="searchInput" placeholder="업종명이나 코드를 입력하세요 (예: 카페, 타이어, G202)">
+                </div>
+            </div>
+
+            <div class="content-grid">
+                <!-- Tree View -->
+                <div class="card tree-card">
+                    <h3>업종 분류 트리</h3>
+                    <div class="tree-container" id="treeContainer">
+                        <div class="loading">데이터를 불러오는 중입니다...</div>
+                    </div>
+                </div>
+
+                <!-- Search Results & Details -->
+                <div class="card result-card">
+                    <h3>검색 결과 및 상세</h3>
+                    <div class="result-container" id="resultContainer">
+                        <div class="empty-state">
+                            <i class='bx bx-folder-open'></i>
+                            <p>좌측 트리에서 업종을 선택하거나<br>위 검색창에서 업종을 검색하세요.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">복사되었습니다.</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
